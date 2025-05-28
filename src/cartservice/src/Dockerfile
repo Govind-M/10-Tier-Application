@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS builder
+FROM mcr.microsoft.com/dotnet/sdk:9.0.101-noble AS builder
 
 WORKDIR /usr/src/app
 
@@ -10,13 +10,12 @@ RUN dotnet publish cartservice.csproj -r linux-musl-x64 \
     -p:PublishSingleFile=true \
     --self-contained true \
     -p:PublishTrimmed=True \
-    -p:TrimMode=Full \
     -c release \
-    -o /cartservice \
-    --no-restore
-   
+    -o /cartservice && \
+    chmod +x /cartservice/cartservice
 
-FROM mcr.microsoft.com/dotnet/runtime-deps:8.0-alpine3.20
+
+FROM mcr.microsoft.com/dotnet/runtime-deps:9.0.1-noble-chiseled
 
 WORKDIR /usr/src/app
 

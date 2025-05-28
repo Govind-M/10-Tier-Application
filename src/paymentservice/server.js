@@ -101,6 +101,6 @@ class HipsterShopServer {
   }
 }
 
-HipsterShopServer.PORT = process.env.PORT;
+HipsterShopServer.PORT = process.env.PORT || '8085';
 
 module.exports = HipsterShopServer;

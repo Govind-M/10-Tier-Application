@@ -1,15 +1,14 @@
 FROM python:3.12.8-alpine AS builder
 
 WORKDIR /usr/src/app
-
 RUN apk update \
-    && apk add --no-cache g++ linux-headers \
+    && apk add --no-cache  g++ linux-headers \
     && rm -rf /var/cache/apk/*
 
 COPY requirements.txt .
-RUN pip install -r requirements.txt    
+RUN pip install -r requirements.txt
 
-FROM python:3.10.8-slim
+FROM python:3.12.8-alpine
 
 ENV PYTHONUNBUFFERED=1
 
