@@ -120,7 +120,7 @@ services:
           - currencyservice
           - shippingservice
           - adservice
-          - shoppingassistantservice
+          # - shoppingassistantservice
           - paymentservice
           - emailservice
 
@@ -189,17 +189,17 @@ services:
         restart: unless-stopped 
 
 # Shoppingassistant Service
-    shoppingassistantservice:
-        image: manojgovind/onlineboutiquerepo:shoppingassistantservice
-        container_name: shoppingassistantservice
-        build:
-            context: ./
-            dockerfile: ./src/shoppingassistantservice/Dockerfile
-        ports:
-         - "8083:8080"
-        networks:
-          - default  
-        restart: unless-stopped 
+    # shoppingassistantservice:
+    #     image: manojgovind/onlineboutiquerepo:shoppingassistantservice
+    #     container_name: shoppingassistantservice
+    #     build:
+    #         context: ./
+    #         dockerfile: ./src/shoppingassistantservice/Dockerfile
+    #     ports:
+    #      - "8083:8080"
+    #     networks:
+    #       - default  
+    #     restart: unless-stopped 
 
 # Redis Service
     redis:

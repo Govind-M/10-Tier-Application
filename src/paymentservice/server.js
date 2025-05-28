@@ -21,7 +21,7 @@ const charge = require('./charge');
 const logger = require('./logger')
 
 
-HipsterShopServer.PORT = 8085;
+HipsterShopServer.PORT = 50051;
 
 class HipsterShopServer {
   constructor(protoRoot, port = HipsterShopServer.PORT) {
