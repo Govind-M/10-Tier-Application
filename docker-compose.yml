@@ -106,6 +106,7 @@ services:
           - CHECKOUT_SERVICE_ADDR=checkoutservice:5050
           - CURRENCY_SERVICE_ADDR=currencyservice:7000
           - SHIPPING_SERVICE_ADDR=shippingservice:50051
+          - AD_SERVICE_ADDR=adservice:9555
         depends_on:
           - cartservice
           - productcatalogservice
@@ -113,6 +114,7 @@ services:
           - checkoutservice
           - currencyservice
           - shippingservice
+          - adservice
         networks:
           - default   
         restart: unless-stopped  
