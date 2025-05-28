@@ -19,10 +19,10 @@ FROM mcr.microsoft.com/dotnet/runtime-deps:9.0.1-noble-chiseled
 
 WORKDIR /usr/src/app
 
-COPY --from=builder /cartservice ./
+COPY --from=builder /cartservice .
 
 EXPOSE 7070
 ENV DOTNET_EnableDiagnostics=0 \
     ASPNETCORE_HTTP_PORTS=7070
 
-ENTRYPOINT [ "./cartservice" ]
+ENTRYPOINT [ "/usr/src/app/cartservice" ]

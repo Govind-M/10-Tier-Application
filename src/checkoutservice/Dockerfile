@@ -14,9 +14,9 @@ FROM alpine
 
 WORKDIR /usr/src/app
 
-COPY --from=builder /go/bin/checkoutservice ./
+COPY --from=builder /go/bin/checkoutservice .
 
 ENV GOTRACEBACK=single
 
 EXPOSE 5050
-ENTRYPOINT [ "./checkoutservice" ]
+ENTRYPOINT [ "/usr/src/app/checkoutservice" ]

@@ -112,6 +112,9 @@ jsonpatch==1.33
     # via langchain-core
 jsonpointer==3.0.0
     # via jsonpatch
+    
+langgraph==0.0.53
+
 langchain==0.3.21
     # via -r requirements.in
 langchain-core==0.3.49

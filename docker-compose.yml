@@ -52,12 +52,14 @@ services:
           - SHIPPING_SERVICE_ADDR=shippingservice:50051
           - EMAIL_SERVICE_ADDR=emailservice:5000
           - PRODUCT_CATALOG_SERVICE_ADDR=productcatalogservice:3550
+          - CURRENCY_SERVICE_ADDR=currencyservice:7000
         depends_on:
           - cartservice
           - paymentservice
           - shippingservice
           - emailservice
           - productcatalogservice
+          - currencyservice
         networks:
           - default
         restart: unless-stopped  
@@ -107,6 +109,9 @@ services:
           - CURRENCY_SERVICE_ADDR=currencyservice:7000
           - SHIPPING_SERVICE_ADDR=shippingservice:50051
           - AD_SERVICE_ADDR=adservice:9555
+          - SHOPPING_ASSISTANT_SERVICE_ADDR:8080
+          - PAYMENT_SERVICE_ADDR:50051
+          - EMAIL_SERVICE_ADDR:8080
         depends_on:
           - cartservice
           - productcatalogservice
@@ -115,6 +120,10 @@ services:
           - currencyservice
           - shippingservice
           - adservice
+          - shoppingassistantservice
+          - paymentservice
+          - emailservice
+
         networks:
           - default   
         restart: unless-stopped  

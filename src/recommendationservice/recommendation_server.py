@@ -20,7 +20,7 @@ import time
 import traceback
 from concurrent import futures
 
-import googlecloudprofiler
+# import googlecloudprofiler
 from google.auth.exceptions import DefaultCredentialsError
 import grpc
 

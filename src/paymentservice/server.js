@@ -20,6 +20,9 @@ const charge = require('./charge');
 
 const logger = require('./logger')
 
+
+HipsterShopServer.PORT = 8085;
+
 class HipsterShopServer {
   constructor(protoRoot, port = HipsterShopServer.PORT) {
     this.port = port;
@@ -101,6 +104,6 @@ class HipsterShopServer {
   }
 }
 
-HipsterShopServer.PORT = process.env.PORT || '8085';
+
 
 module.exports = HipsterShopServer;
